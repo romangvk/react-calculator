@@ -1,0 +1,60 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2em;
+}
+
+button {
+  background: none;
+
+  margin: 0;
+  padding: 0.75em;
+
+  color: var(--primary-text);
+  font-weight: 800;
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: center;
+
+  outline: none;
+  border: none;
+
+  border-radius: 0.7em;
+  box-shadow: 7px 7px 13px var(--primary-dark),
+    -7px -7px 13px var(--primary-light),
+    inset 0 0 0.1em 0.1em var(--primary-light);
+  background-color: var(--primary);
+
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: 7px 7px 13px var(--primary-dark),
+    -7px -7px 13px var(--primary-light),
+    inset 7px 7px 13px var(--primary-dark-inset),
+    inset -7px -7px 13px var(--primary-light-inset);
+}
+
+.key-0,
+.key-23,
+.key-3 {
+  color: var(--secondary-text);
+  background-color: var(--secondary);
+  box-shadow: 7px 7px 13px var(--primary-dark),
+    -7px -7px 13px var(--primary-light);
+}
+.key-0:active,
+.key-23:active,
+.key-3:active {
+  box-shadow: 7px 7px 13px var(--primary-dark),
+    -7px -7px 13px var(--primary-light),
+    inset 7px 7px 13px var(--secondary-dark-inset),
+    inset -7px -7px 13px var(--secondary-light-inset);
+}
+
+.key-3 {
+  font-size: 1.5em;
+  border-radius: 0.467em;
+  padding: 0;
+}

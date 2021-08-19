@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+@import url("./colors.css");
+@import url("./keypad.css");
+@import url("./output.css");
+@import url("./panel.css");
+
+* {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

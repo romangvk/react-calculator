@@ -1,0 +1,8 @@
+.panel {
+  width: 20em;
+  padding: 3em;
+  border: 0.1em solid var(--primary-light);
+  border-radius: 1em;
+  box-shadow: 0 0 0.1em var(--primary-light);
+  background-color: var(--primary);
+}
