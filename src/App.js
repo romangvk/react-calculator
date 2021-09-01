@@ -35,7 +35,7 @@ function App() {
     }
   }
   return (
-    <div className="app ice">
+    <div className="app">
       <Panel>
         <Output text={text}></Output>
         <Keypad keypress={keypress}></Keypad>
