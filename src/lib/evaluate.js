@@ -9,9 +9,6 @@ export default function evaluate(expression) {
     (match) => match[0]
   );
 
-  console.log(nums);
-  console.log(ops);
-
   // perform * and / operators
   let i = 0;
   while (i < ops.length) {
@@ -43,5 +40,6 @@ export default function evaluate(expression) {
       ops.splice(0, 1);
     }
   }
+
   return nums[0];
 }
