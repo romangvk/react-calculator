@@ -9,8 +9,9 @@ function App() {
   let [text, setText] = useState("");
 
   function keypress(key) {
+    let prev = text;
     if (text === "NaN" || text === "Infinity" || text === "-Infinity") {
-      setText("");
+      prev = "";
     }
     switch (key) {
       case "C":
@@ -18,20 +19,33 @@ function App() {
         break;
       case "/":
       case "*":
-      case "-":
       case "+":
-        if (text.slice(-1) >= "0" && text.slice(-1) <= "9") setText(text + key);
+        if (/\d$/.test(prev)) setText(prev + key);
+        break;
+      case "-":
+        // preceded by + change to minus
+        if (/\+$/.test(prev)) setText(prev.replace(/.$/, "-"));
+        // preceded by - change to plus
+        else if (/\d-$/.test(prev)) setText(prev.replace(/.$/, "+"));
+        // preceded by - but that is the whole string
+        else if (/^-$/.test(prev)) setText(prev.replace(/.$/, ""));
+        else setText(prev + "-");
         break;
       case ".":
-        if (text.slice(-1) !== ".") setText(text + key);
+        if (prev.slice(-1) !== ".") setText(prev + key);
         break;
       case "=":
-        if (text.slice(-1) >= "0" && text.slice(-1) <= "9") {
-          setText(evaluate(text).toPrecision(7).replace(/\.\d*0+$/, "").replace(/\.?0+e/, "e"));
+        if (/^.*\d+$/.test(prev)) {
+          setText(
+            evaluate(prev)
+              .toPrecision(7)
+              .replace(/\.\d*0+$/, "")
+              .replace(/\.?0+e/, "e")
+          );
         }
         break;
       default:
-        setText(text + key);
+        setText(prev + key);
     }
   }
   return (

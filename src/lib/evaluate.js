@@ -1,8 +1,13 @@
 export default function evaluate(expression) {
-  let nums = [...expression.matchAll(/\d*[.]?\d+(e[+-]\d+)?/g)].map((match) =>
-    parseFloat(match[0])
+  let nums = [
+    ...expression.matchAll(/(?:(?<=[*/+-]|^)-)?\d*[.]?\d+(?:e[+-]\d+)?/g),
+  ].map((match) => parseFloat(match[0]));
+  let ops = [...expression.matchAll(/(?<![e*/+-]|^)[*/+-]/g)].map(
+    (match) => match[0]
   );
-  let ops = [...expression.matchAll(/(?<!e)[*/+-]/g)].map((match) => match[0]);
+
+  console.log(nums);
+  console.log(ops);
 
   let i = 0;
   while (i < ops.length) {
