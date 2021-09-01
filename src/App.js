@@ -46,7 +46,7 @@ function App() {
     }
   }
   return (
-    <div className="app">
+    <div className="app light">
       <Panel>
         <Output text={text}></Output>
         <Keypad keypress={keypress}></Keypad>

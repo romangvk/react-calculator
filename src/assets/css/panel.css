@@ -9,12 +9,11 @@
 }
 
 @media only screen and (max-width: 50em) {
-  body {
-    background-color: var(--base);
+  .app.light,
+  .app.dark {
+    --background: var(--base);
   }
   .panel {
-    width: 1fr;
-    height: 1fr;
     border: none;
     border-radius: 0;
     box-shadow: none;
