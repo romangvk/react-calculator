@@ -20,6 +20,7 @@ function App() {
       case "/":
       case "*":
       case "+":
+        // only add an operator after a number
         if (/\d$/.test(prev)) setText(prev + key);
         break;
       case "-":
@@ -32,16 +33,12 @@ function App() {
         else setText(prev + "-");
         break;
       case ".":
-        if (prev.slice(-1) !== ".") setText(prev + key);
+        // don't put two decimal points in a row
+        if (!/\.$/.test(prev)) setText(prev + key);
         break;
       case "=":
         if (/^.*\d+$/.test(prev)) {
-          setText(
-            evaluate(prev)
-              .toPrecision(7)
-              .replace(/\.\d*0+$/, "")
-              .replace(/\.?0+e/, "e")
-          );
+          setText(String(evaluate(prev)));
         }
         break;
       default:
