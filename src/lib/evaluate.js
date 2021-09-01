@@ -1,7 +1,10 @@
 export default function evaluate(expression) {
+  // extract numbers
   let nums = [
     ...expression.matchAll(/(?:(?<=[*/+-]|^)-)?\d*[.]?\d+(?:e[+-]\d+)?/g),
   ].map((match) => parseFloat(match[0]));
+
+  // extract operators
   let ops = [...expression.matchAll(/(?<![e*/+-]|^)[*/+-]/g)].map(
     (match) => match[0]
   );
@@ -9,6 +12,7 @@ export default function evaluate(expression) {
   console.log(nums);
   console.log(ops);
 
+  // perform * and / operators
   let i = 0;
   while (i < ops.length) {
     if (ops[i] === "*") {
@@ -26,6 +30,7 @@ export default function evaluate(expression) {
     i++;
   }
 
+  // perform + and - operators
   for (let op of ops) {
     if (op === "+") {
       nums[0] += nums[1];
