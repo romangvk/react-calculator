@@ -1,56 +1,8 @@
-.purple {
-  --primary: #2f2145;
-  --primary-text: #faf0ca;
-  --primary-light: #3b2956;
-  --primary-dark: #231934;
-  --primary-light-inset: #3b295655;
-  --primary-dark-inset: #23193455;
-
-  --secondary: #faf0ca;
-  --secondary-text: #2f2145;
-  --secondary-light: #ffffe2;
-  --secondary-dark: #dcd3b2;
-  --secondary-light-inset: #ffffe2;
-  --secondary-dark-inset: #dcd3b2;
-
-  --background: #ffffff;
-  --screen-backlight: #ffffff;
-}
-
-.blue {
-  --primary: #228CDB;
-  --primary-text: white;
-  --primary-light: #27a1fc;
-  --primary-dark: #1d77ba;
-  --primary-light-inset: #27a1fc55;
-  --primary-dark-inset: #1d77ba55;
-
-  --secondary: #f2542c;
-  --secondary-text: white;
-  --secondary-light: #ff7e42;
-  --secondary-dark: #792a16;
-  --secondary-light-inset: #ff7e4255;
-  --secondary-dark-inset: #792a1655;
-
-  --background: #ffffff;
-  --screen-backlight: #ffffff;
-}
-
-.mango {
-  --primary: #359768;
-  --primary-text: white;
-  --primary-light: #A7D46F44;
-  --primary-dark: #295A4344;
-  --primary-light-inset: #A7D46F22;
-  --primary-dark-inset: #295A4322;
-
-  --secondary: hsl(50, 100%, 78%);
-  --secondary-text: #295A43;
-  --secondary-light: hsl(50, 100%, 80%);
-  --secondary-dark: hsl(50, 70%, 70%);
-  --secondary-light-inset: hsl(50, 100%, 80%);
-  --secondary-dark-inset: hsl(50, 70%, 70%);
-
-  --background: #ffffff;
-  --screen-backlight: #ffffff;
+:root {
+  --base: #efeeee;
+  --text: black;
+  --light: #fff7;
+  --dark: #d1cdc777;
+  --border: #fff4;
+  --shadow: #0002;
 }

@@ -1,8 +1,22 @@
 .panel {
   width: 20em;
-  padding: 3em;
-  border: 0.1em solid var(--primary-light);
+  padding: 2em;
+  border: 0.1em solid var(--border);
   border-radius: 1em;
-  box-shadow: 0 0 0.1em var(--primary-light);
-  background-color: var(--primary);
+  background-color: var(--base);
+
+  box-shadow: 7px 21px 21px var(--shadow);
+}
+
+@media only screen and (max-width: 50em) {
+  body {
+    background-color: var(--base);
+  }
+  .panel {
+    width: 1fr;
+    height: 1fr;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }

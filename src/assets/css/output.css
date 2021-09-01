@@ -1,11 +1,32 @@
 .output {
-  width: 1fr;
-  height: 3.2em;
-  margin-bottom: 2em;
-  padding: 1.1em;
+  height: 2em;
+  margin-bottom: 1em;
+  padding: 0 0.5em;
   border-radius: 0.3em;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  background-color: var(--screen-backlight);
+  font-size: 3em;
+  line-height: 1.9em;
+  text-align: end;
+  border-bottom: solid 0.1em var(--dark);
+  background-color: var(--light);
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+  height: 0.1em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
