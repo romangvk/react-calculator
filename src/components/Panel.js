@@ -37,7 +37,7 @@ function Panel() {
         break;
       case ".":
         // don't put two decimal points in a row
-        if (!/\.$/.test(prev)) setText(prev + key);
+        if (!/\.\d*$/.test(prev)) setText(prev + key);
         break;
       case "=":
         if (/^.*\d+$/.test(prev)) {
