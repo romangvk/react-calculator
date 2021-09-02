@@ -6,6 +6,9 @@
   --border: #fff4;
   --shadow: #0002;
   --background: white;
+  --accent: #61dafb;
+  --alt-text: black;
+  --accent-light: #92e7ff;
 }
 
 .dark {
@@ -16,4 +19,7 @@
   --border: #0001;
   --shadow: #0008;
   --background: #212120;
+  --accent: #61dafb;
+  --alt-text: var(--base);
+  --accent-light: #92e7ff;
 }

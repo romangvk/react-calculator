@@ -39,6 +39,8 @@ button:active {
 
 .key1 {
   grid-area: 1 / 1 / 2 / 2;
+  background-color: var(--accent);
+  color: var(--alt-text);
 }
 .key2 {
   grid-area: 2 / 4 / 4 / 5;
@@ -48,4 +50,10 @@ button:active {
 }
 .key4 {
   grid-area: 4 / 4 / 6 / 5;
+  background-color: var(--accent);
+  color: var(--alt-text);
+}
+.key1:hover,
+.key4:hover {
+  background-color: var(--accent-light);
 }

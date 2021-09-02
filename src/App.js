@@ -10,7 +10,7 @@ function App() {
 
   function keypress(key) {
     let prev = text;
-    if (text === "NaN" || text === "Infinity" || text === "-Infinity") {
+    if (text === "NaN" || text === "Infinity" || text === "-Infinity" || text === "Err: Division by 0") {
       prev = "";
     }
     switch (key) {

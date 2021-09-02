@@ -19,6 +19,7 @@ export default function evaluate(expression) {
       continue;
     }
     if (ops[i] === "/") {
+      if (!+nums[i + 1]) return "Err: Division by 0";
       nums[i] /= nums[i + 1];
       nums.splice(i + 1, 1);
       ops.splice(i, 1);
