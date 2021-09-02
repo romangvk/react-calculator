@@ -1,6 +1,6 @@
 {
   "name": "react-calc",
-  "homepage": "https://romankasparian.dev/react-calc",
+  "homepage": "https://romankasparian.dev/react-calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
