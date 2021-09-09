@@ -1,7 +1,14 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "a . . b"
+    ". . . ."
+    ". . . c"
+    ". . . c"
+    ". . . e"
+    "d d . e";
   gap: 1em;
 }
 
@@ -37,23 +44,29 @@ button:active {
     inset 0.2em 0.2em 0.4em var(--dark), inset -0.2em -0.2em 0.4em var(--light);
 }
 
-.key1 {
-  grid-area: 1 / 1 / 2 / 2;
+.key-clear {
+  grid-area: a;
+}
+.key-back {
+  grid-area: b;
+}
+.key-plus {
+  grid-area: c;
+}
+.key-0 {
+  grid-area: d;
+}
+.key-equal {
+  grid-area: e;
+}
+.key-clear,
+.key-back,
+.key-equal {
   background-color: var(--accent);
   color: var(--alt-text);
 }
-.key2 {
-  grid-area: 2 / 4 / 4 / 5;
-}
-.key3 {
-  grid-area: 5 / 1 / 6 / 3;
-}
-.key4 {
-  grid-area: 4 / 4 / 6 / 5;
-  background-color: var(--accent);
-  color: var(--alt-text);
-}
-.key1:hover,
-.key4:hover {
+.key-clear:hover,
+.key-back:hover,
+.key-equal:hover {
   background-color: var(--accent-light);
 }
