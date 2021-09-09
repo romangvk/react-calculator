@@ -20,11 +20,27 @@ function Panel() {
       case "C":
         setText("");
         break;
+      case "(":
+        // don't put an open paren after a decimal point
+        if (!/\.$/.test(prev)) setText(prev + "(");
+        break;
+      case ")":
+        // only put a close paren if there is an open paren that has not been closed
+        if (
+          /(\d|\))$/.test(prev) &&
+          (prev.match(/\(/g) || []).length > (prev.match(/\)/g) || []).length
+        )
+          setText(prev + ")");
+        break;
+      case "↩":
+        setText(prev.replace(/.$/, ""));
+        break;
+      case "^":
       case "/":
       case "*":
       case "+":
-        // only add an operator after a number
-        if (/\d$/.test(prev)) setText(prev + key);
+        // only add an operator after a number or close paren
+        if (/(\d|\))$/.test(prev)) setText(prev + key);
         break;
       case "-":
         // preceded by + change to minus
@@ -37,12 +53,17 @@ function Panel() {
         break;
       case ".":
         // don't put two decimal points in a row
-        if (!/\.\d*$/.test(prev)) setText(prev + key);
+        if (!/\.\d*$/.test(prev)) setText(prev + ".");
         break;
       case "=":
-        if (/^.*\d+$/.test(prev)) {
-          setText(String(evaluate(prev)));
-        }
+        // evaluate if the expression ends in a number or a close paren
+        // and also that the number of close parens matches the number of open parens
+        if (
+          /(\d|\))$/.test(prev) &&
+          (prev.match(/\(/g) || []).length ===
+            (prev.match(/\)/g) || []).length
+        )
+          setText(String(evaluate(prev)).replace(/e\+?/, "*10^"));
         break;
       default:
         setText(prev + key);
