@@ -3,7 +3,7 @@ Simple calculator app made using React. Validation is handled using regular expr
 
 React Calculator is hosted at [https://romankasparian.dev/react-calculator/](https://romankasparian.dev/react-calculator/).
 ## Technologies
-- React
+- React 17.0.2
 - Node 16.8.0
 ## Feature Backlog
 - Keyboard support
