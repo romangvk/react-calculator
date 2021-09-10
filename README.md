@@ -11,7 +11,7 @@ React Calculator is hosted at [https://romankasparian.dev/react-calculator/](htt
 - Store a history of entries
 ## Running Locally
 ```
-$ npm run install
+$ npm install
 $ npm run start
 ```
 Runs the app in the development mode.
